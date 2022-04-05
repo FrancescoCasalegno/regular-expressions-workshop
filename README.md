@@ -1,5 +1,17 @@
 This material was prepared for the workshop held on 2022-04-07 at the Gymnasium Thun (Thun, Switzerland).
 
+# Regex 101
+
+| pattern      | meaning                                        | usage          | matches                                           | doesn't match            |
+|--------------|------------------------------------------------|----------------|---------------------------------------------------|--------------------------|
+| `\b`         | word boundary (beginning or end)               | `apfel\b`      | `apfel`                                           |                          |
+| `\w`         | alphanumeric character (= a letter or a digit) | `\wier`        | `vier`, `Bier`, `hier`, `Tier`                    | `Klavier`                |
+| `[abc]`      | set (any of the character between brackets)    | `[vTB]ier`     | `vier`, `Bier`, `Tier`                            | `hier`, `Klavier`|
+| `(abc\|def)` | any of the groups                              | `(Klav\|T)ier` | `Klavier`, `Tier`                                 | `Bier` |
+| `[a]*`       | 0 or more occurrences                          | `[\w]*ier`       | `Klavier`, `Tier`, `vier`, `Bier`, `Stier`, `ier` |                          |
+| `[a]+`       | 1 or more occurrences                          | `[\w]+ier`       | `Klavier`,  `Tier`,  `vier`,  `Bier`,  `Stier`    | `ier`                    |
+| `[a]?`       | 0 or 1 occurrences                             | `[s]?tier`     | `tier`, `stier`                                   | `vier`                   |
+
 # Set Up
 1. Open the RegExr webpage [https://regexr.com/](https://regexr.com/) in your browser.
 2. Set the RegEx engine to "JavaScript (Browser)".
