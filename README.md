@@ -1,4 +1,4 @@
-This material was prepared for the workshop held on 2022-04-07 at the Gymnasium Thun (Thun, Switzerland).
+This material was prepared for the workshop held on 2022-04-07 at the Gymnasium Thun (Thun, Switzerland), and updated for the workshop held on 2022-09-02 at EPFL (Lausanne, Switzerland). 
 
 # Regex 101
 
