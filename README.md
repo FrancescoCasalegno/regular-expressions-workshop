@@ -4,10 +4,10 @@ This material was prepared for the workshop held on 2022-04-07 at the Gymnasium 
 
 | pattern      | meaning                                        | usage          | matches                                           | doesn't match            |
 |--------------|------------------------------------------------|----------------|---------------------------------------------------|--------------------------|
-| `\b`         | word boundary (beginning or end of a word)               | `apfel\b`      | `apfel`                                           |                          |
+| `\b`         | word boundary (beginning or end of a word)               | `apfel\b`      | `apfel` in `apfel` or `erdapfel`                                           |  `apfel` in `apfelsaft`                        |
 | `\w`         | alphanumeric character (= any letter or a digit) | `\wier`        | `vier`, `Bier`, `hier`, `Tier`                    | `Klavier`                |
 | `[abc]`      | set (any of the character between brackets)    | `[vTB]ier`     | `vier`, `Bier`, `Tier`                            | `hier`, `Klavier`|
-| `(abc\|def)` | group (any of the groups of tokens separated by `|`) | `(Klav\|T)ier` | `Klavier`, `Tier`                                 | `Bier` |
+| `(abc\|def)` | group (any of the groups of tokens separated by `\|`) | `(Klav\|T)ier` | `Klavier`, `Tier`                                 | `Bier` |
 | `[a]*`       | 0 or more occurrences                          | `[\w]*ier`       | `Klavier`, `Tier`, `vier`, `Bier`, `Stier`, `ier` |                          |
 | `[a]+`       | 1 or more occurrences                          | `[\w]+ier`       | `Klavier`,  `Tier`,  `vier`,  `Bier`,  `Stier`    | `ier`                    |
 | `[a]?`       | 0 or 1 occurrences                             | `[s]?tier`     | `tier`, `stier`                                   | `vier`                   |
