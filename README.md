@@ -2,7 +2,7 @@ This material was prepared for the workshop held on 2022-04-07 at the Gymnasium 
 
 # Regex 101
 
-| pattern     | meaning                                                 | usage                                                            | matches                                      | doesn't match                                                   |
+| pattern     | utilité                                                 | exemple                                                          | peut correspondre à                          | ne peut pas correspondre à                                      |
 |-------------|---------------------------------------------------------|------------------------------------------------------------------|----------------------------------------------|-----------------------------------------------------------------|
 | `\b`        | frontière d'un mot (début ou fin d'un mot)              | `mon\b`                                                          | `mon` dans `mon` ou `démon`                  | `mon` dans `montagne`                                           |
 | `\w`        | un caractère alphanumérique (= une lettre ou un nombre) | `\won`                                   <br/> <br/> <br/> <br/> | <br/>`Mon`, `Ton`, `son`, `mon`              | `Tonton`                                                        |
