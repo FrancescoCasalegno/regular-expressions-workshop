@@ -2,16 +2,16 @@ This material was prepared for the workshop held on 2022-04-07 at the Gymnasium 
 
 # Regex 101
 
-| pattern      | meaning                                        | usage          | matches                                           | doesn't match            |
-|--------------|------------------------------------------------|----------------|---------------------------------------------------|--------------------------|
-| `\b`         | word boundary (beginning or end of a word)               | `apfel\b`      | `apfel` in `apfel` or `erdapfel`                                           |  `apfel` in `apfelsaft`                        |
-| `\w`         | alphanumeric character (= any letter or a digit) | `\wier`        | `vier`, `Bier`, `hier`, `Tier`                    | `Klavier`                |
-| `[abc]`      | set (any of the character between brackets)    | `[vTB]ier`     | `vier`, `Bier`, `Tier`                            | `hier`, `Klavier`|
-| `(abc\|def)` | group (any of the groups of tokens separated by `\|`) | `(Klav\|T)ier` | `Klavier`, `Tier`                                 | `Bier` |
-| `[a]*`       | 0 or more occurrences                          | `[\w]*ier`       | `Klavier`, `Tier`, `vier`, `Bier`, `Stier`, `ier` |                          |
-| `[a]+`       | 1 or more occurrences                          | `[\w]+ier`       | `Klavier`,  `Tier`,  `vier`,  `Bier`,  `Stier`    | `ier`                    |
-| `[a]?`       | 0 or 1 occurrences                             | `[s]?tier`     | `tier`, `stier`                                   | `vier`                   |
-| `^`          | beginning of a line                            | `^Tiere`     | `Tiere` in beginning of a line (`"Tiere sind Lebensformen"`)                                    | `Tiere` in the middle or end of a line (`"So viele Tiere!"`) |
+| pattern     | meaning                                                 | usage                                                            | matches                                      | doesn't match                                                   |
+|-------------|---------------------------------------------------------|------------------------------------------------------------------|----------------------------------------------|-----------------------------------------------------------------|
+| `\b`        | frontière d'un mot (début ou fin d'un mot)              | `mon\b`                                                          | `mon` dans `mon` ou `démon`                  | `mon` dans `montagne`                                           |
+| `\w`        | un caractère alphanumérique (= une lettre ou un nombre) | `\won`                                   <br/> <br/> <br/> <br/> | <br/>`Mon`, `Ton`, `son`, `mon`              | `Tonton`                                                        |
+| `[abc]`     | set (un des caractère présents dans les parenthèses)    | `[mst]on`                                 <br/>                  | `mon`, `son`, `ton`                          | `non`, `bon`                                                    |
+| `(abc\def)` | groupe (un des groupes de caractères séparés par `\`    | `(Klav\T)ier`                                                    | `Klavier`, `Tier`                            |                                                                 |
+| `[a]*`      | 0 ou plusieurs occurence(s)                             | `[\w]*on`                                                        | `on`, `chanson`, `démon`, `tonton`, `bon`    |                                                                 |
+| `[a]+`      | 1 ou plusieurs occurrence(s)                            | `[\w]+on`                                                        | `chanson`, `démon`, `tonton`, `bon`          | `son`                                                           |
+| `[a]?`      | 0 ou 1 occurrence                                       | `[s]?on`                                                         | `on`, `son`                                  | `ton`                                                           |
+| `^`         | début d'une ligne                                       | `^Mon`                                      <br/>                | `Mon` au début de la ligne (`"Mon nom est"`) | `Mon` au milieu de la ligne (`"Le Mont Blanc est magnifique!"`) |
 
 # Set Up
 1. Open the RegExr webpage [https://regexr.com/](https://regexr.com/) in your browser.
