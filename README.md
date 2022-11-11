@@ -2,33 +2,43 @@ This material was prepared for the workshop held on 2022-04-07 at the Gymnasium 
 
 # Regex 101
 
-| pattern      | meaning                                        | usage          | matches                                           | doesn't match            |
-|--------------|------------------------------------------------|----------------|---------------------------------------------------|--------------------------|
-| `\b`         | word boundary (beginning or end of a word)               | `apfel\b`      | `apfel` in `apfel` or `erdapfel`                                           |  `apfel` in `apfelsaft`                        |
-| `\w`         | alphanumeric character (= any letter or a digit) | `\wier`        | `vier`, `Bier`, `hier`, `Tier`                    | `Klavier`                |
-| `[abc]`      | set (any of the character between brackets)    | `[vTB]ier`     | `vier`, `Bier`, `Tier`                            | `hier`, `Klavier`|
-| `(abc\|def)` | group (any of the groups of tokens separated by `\|`) | `(Klav\|T)ier` | `Klavier`, `Tier`                                 | `Bier` |
-| `[a]*`       | 0 or more occurrences                          | `[\w]*ier`       | `Klavier`, `Tier`, `vier`, `Bier`, `Stier`, `ier` |                          |
-| `[a]+`       | 1 or more occurrences                          | `[\w]+ier`       | `Klavier`,  `Tier`,  `vier`,  `Bier`,  `Stier`    | `ier`                    |
-| `[a]?`       | 0 or 1 occurrences                             | `[s]?tier`     | `tier`, `stier`                                   | `vier`                   |
-| `^`          | beginning of a line                            | `^Tiere`     | `Tiere` in beginning of a line (`"Tiere sind Lebensformen"`)                                    | `Tiere` in the middle or end of a line (`"So viele Tiere!"`) |
+| pattern     | utilité                                                 | exemple                                                          | peut correspondre à                          | ne peut pas correspondre à                                      |
+|-------------|---------------------------------------------------------|------------------------------------------------------------------|----------------------------------------------|-----------------------------------------------------------------|
+| `\b`        | frontière d'un mot (début ou fin d'un mot)              | `mon\b`                                                          | `mon` dans `mon` ou `poumon`                 | `mon` dans `montagne`                                           |
+| `\w`        | un caractère alphanumérique (= une lettre ou un nombre) | `\won`                                   <br/> <br/> <br/> <br/> | <br/>`Mon`, `Ton`, `son`, `mon`              | `Tonton`                                                        |
+| `[abc]`     | set (un des caractère présents dans les parenthèses)    | `[mst]on`                                 <br/>                  | `mon`, `son`, `ton`                          | `non`, `bon`                                                    |
+| `(abc\def)` | groupe (un des groupes de caractères séparés par `\`    | `(chans\mai)son`                                                 | `chanson`, `maison`                          |                                                                 |
+| `[a]*`      | 0 ou plusieurs occurence(s)                             | `[\w]*on`                                                        | `on`, `chanson`, `poumon`, `tonton`, `bon`   |                                                                 |
+| `[a]+`      | 1 ou plusieurs occurrence(s)                            | `[\w]+on`                                                        | `chanson`, `poumon`, `tonton`, `bon`         | `son`                                                           |
+| `[a]?`      | 0 ou 1 occurrence                                       | `[s]?on`                                                         | `on`, `son`                                  | `ton`                                                           |
+| `^`         | début d'une ligne                                       | `^Mon`                                      <br/>                | `Mon` au début de la ligne (`"Mon nom est"`) | `Mon` au milieu de la ligne (`"Le Mont Blanc est magnifique!"`) |
 
-# Set Up
-1. Open the RegExr webpage [https://regexr.com/](https://regexr.com/) in your browser.
-2. Set the RegEx engine to "JavaScript (Browser)".
-3. Set the Tools to "List".
-4. Set the Flags to "global" and "multiline".
-5. Open [scraped_wiki_neuron.md](scraped_wiki_neuron.md) and copy-paste its contents into the text box of the RegExr website. 
+# Préparation
+1. Ouvrez le site RegExr [https://regexr.com/](https://regexr.com/) dans votre browser.
+2. Changez les paramètres de RegExr pour "JavaScript (Browser)".
+3. Changez les outils pour "List".
+4. Activez les "Flags" "global" and "multiline".
+5. Ouvrez [scraped_wiki_neuron.md](scraped_wiki_neuron.md) et copiez-collez le contenu dans la boite de texte.
 
-# Exercises
-Try to write regular expressions that extract the following contents from the text.
-1. Extract exact mention of the word `"neuron"`. [34 matches]
-2. What about uppercase, e.g. at the beginning of a sentence? Extract mention of the word `"neuron"` or `"Neuron"`. [35 matches]
-3. What about plurals?  Try to extract `"neurons"`, `"Neurons"`, `"neuron"`, or `"Neuron"`. [105 matches]
-4. Now, any word containing `"neur"` or `"Neur"` inside of it (e.g. `"interneuronal"`). [147 matches]
-5. Certain words use the root `"nerv"` to express similar concepts (e.g. `"nervous system"`). Extract all words containing `"neur"`, `"Neur"`, `"nerv"`, or `"Nerv"`,  inside of it. [170 matches]
-6. Under the section ["Classification"](scraped_wiki_neuron.md#Classification) we find a bulleted list of neuron types. They are all in format `"Xxxx cells"`, where `"Xxxxx"` is an adjective starting with a capital letter like `"Basket cells"` or `"Granule cells"`. Try to extract all of them. [8 matches]
-7. Under the section ["Neurotransmitters"](scraped_wiki_neuron.md#Neurotransmitters) we find another bulleted list of neuron types. They are all in format `"Xxxx neurons"`, where `"Xxxxx"` is an adjective starting with a capital letter like `"Cholinergic neurons"` or `"Purinergic neurons"`. Try to extract all of them. [9 matches]
+# Exercices
+Essayer d'écrire les expressions qui permettront d'extraire du texte
+1. Toutes les mentions exactes du mot `"neuron"`. [34 réponses]
+2. Que se passe-t-il si le mot commence par une majuscule ? Parce qu'il se trouve au début de la phrase par exemple. 
+   Essayez d'extraire les mentions du mot `"neuron"` ou `"Neuron"`. [35 réponses]
+3. Que se passe-t-il pour la forme plurielle ? Essayez d'extraire `"neurons"`, `"Neurons"`, `"neuron"`, ou `"Neuron"`.
+   [105 réponses]
+4. Maintenant, essayez d'extraire tous les mots contenant `"neur"` ou `"Neur"` (comme par exemple `"interneuronal"`).
+   [147 réponses]
+5. Certains mot en anglais utilisent la racine `"nerv"` pour exprimer des concepts similaires (par exemple `"nervous 
+   system"`). Essayer d'extraire tous les mots contenant `"neur"`, `"Neur"`, `"nerv"`, ou `"Nerv"`. [170 réponses]
+6. Dans la section ["Classification"](scraped_wiki_neuron.md#Classification), nous trouvons une liste de types de 
+   cellules. Ils sont tous sous la forme `"Xxxx cells"`, où `"Xxxxx"` est un adjectif commencant par une lettre 
+   majuscule comme `"Basket cells"` or `"Granule cells"`. Essayez de tous les extraire. [8 réponses]
+7. Dans la section ["Neurotransmitters"](scraped_wiki_neuron.md#Neurotransmitters), nous trouvons une liste
+   de types de neurones. Ils sont tous sous la forme `"Xxxx neurons"`, où `"Xxxxx"` est un adjectif commencant par 
+   une lettre majuscule comme `"Cholinergic neurons"` ou `"Purinergic neurons"`. Essayez de tous les extraire. [9 
+   réponses]
+
 
 # Solutions
 <details>
